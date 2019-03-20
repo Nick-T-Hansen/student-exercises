@@ -28,15 +28,11 @@ namespace student_exercises
                 Console.WriteLine($"{student.firstName} is working on {anExercise.exerciseName}");
             }
         }
-        // CODE TO TRY AND STREAMLINE WHAT IS PRINTED OUT- STUDENT AND BOTH EXERCISES ON ONE LINE
-        // public void asignExercise(Exercise anExercise, Cohort students) {
-        //     foreach(Student student in students.studentList) {
-        //         foreach(Exercise exercise in students.exerciseList)
-        //             if
-
-        //             else(student.exerciseList.Add(anExercise);
-        //         Console.WriteLine($"{student.firstName} is working on {anExercise.exerciseName}");
-        //     }
-        // }
+        /*
+        instructors had this code- the list does not exist in cohort as I created, but in student
+        student.asignExercise(Student students, Exercise anExercise) {
+            student.AsignExercise.Add(anExercise);
+        }
+         */
     }
 }
