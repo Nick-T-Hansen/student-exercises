@@ -1,8 +1,14 @@
 
+DROP TABLE IF EXISTS StudentExercise;
+DROP TABLE IF EXISTS Student;
+DROP TABLE IF EXISTS Instructor;
+DROP TABLE IF EXISTS Exercise;
+DROP TABLE IF EXISTS Cohort;
+
 CREATE TABLE Exercise (
  Id INT NOT NULL PRIMARY KEY IDENTITY,
- [ExerciseName] TEXT NOT NULL,
- [ExerciseLanguage] TEXT NOT NULL
+ [ExerciseName] VARCHAR(50) NOT NULL,
+ [ExerciseLanguage] VARCHAR(50) NOT NULL
  );
 
  INSERT INTO Exercise (ExerciseName, ExerciseLanguage)
@@ -16,8 +22,9 @@ CREATE TABLE Exercise (
  
  CREATE Table Cohort (
  Id INT NOT NULL PRIMARY KEY IDENTITY,
- CohortName TEXT NOT NULL
+ CohortName VARCHAR(50) NOT NULL
  );
+
  INSERT INTO Cohort (CohortName)
  VALUES ('Day Cohort 30');
  INSERT INTO Cohort (CohortName)
@@ -27,9 +34,9 @@ CREATE TABLE Exercise (
 
  CREATE Table Student (
  Id INT NOT NULL PRIMARY KEY IDENTITY,
- FirstName TEXT NOT NULL,
- LastName TEXT NOT NULL,
- Slack TEXT NOT NULL,
+ FirstName VARCHAR(50) NOT NULL,
+ LastName VARCHAR(50) NOT NULL,
+ Slack VARCHAR(50) NOT NULL,
  Cohort_id INT NOT NULL,
  CONSTRAINT FK_StudentCohort FOREIGN KEY(Cohort_id) REFERENCES Cohort(Id)
  );
@@ -90,14 +97,13 @@ CREATE TABLE Exercise (
 
  CREATE Table Instructor (
  Id INT NOT NULL PRIMARY KEY IDENTITY,
- FirstName TEXT NOT NULL,
- LastName TEXT NOT NULL,
- Slack TEXT NOT NULL,
+ FirstName VARCHAR(50) NOT NULL,
+ LastName VARCHAR(50) NOT NULL,
+ Slack VARCHAR(50) NOT NULL,
  Cohort_id INT NOT NULL
  CONSTRAINT FK_InstructorCohort FOREIGN KEY(Cohort_id) REFERENCES Cohort(Id)
  );
 
- */
  INSERT INTO Instructor(FirstName, LastName, Slack, Cohort_id)
  VALUES ('Chuck', 'Norris', '@fist', 1);
  INSERT INTO Instructor(FirstName, LastName, Slack, Cohort_id)
